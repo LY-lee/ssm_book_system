@@ -39,4 +39,9 @@ public class BookServiceImpl implements BookService {
     public int deleteBookId(long id) {
         return bookDao.deleteBookById(id);
     }
+
+    @Override
+    public int countNum() {
+        return bookDao.countNum();
+    }
 }

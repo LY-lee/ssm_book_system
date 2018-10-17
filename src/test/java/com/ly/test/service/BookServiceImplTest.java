@@ -16,4 +16,10 @@ public class BookServiceImplTest extends BaseTest {
         Book book = bookService.getById(1000);
         System.out.println(book);
     }
+
+    @Test
+    public void countNum() {
+        int i = bookService.countNum();
+        System.out.println(i);
+    }
 }

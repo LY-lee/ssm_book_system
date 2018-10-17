@@ -1,6 +1,8 @@
 package com.ly.entity;
 
-public class Book {
+import java.io.Serializable;
+
+public class Book implements Serializable {
     private long bookId;
     private String name;
     private int number;

@@ -3,6 +3,9 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ly.dao.BookDao">
+    <!-- redis缓存 -->
+    <cache type="com.ly.dao.RedisCache" />
+
     <select id="queryById" resultType="Book" parameterType="long">
         SELECT
           book_id,
@@ -62,4 +65,11 @@
         WHERE
           book_id=#{bookId}
     </delete>
+
+    <select id="countNum" resultType="java.lang.Integer">
+        SELECT
+          COUNT(*)
+        FROM
+          book
+    </select>
 </mapper>
